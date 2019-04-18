@@ -32,6 +32,8 @@ this.letters ="";
     inputKey(){
         let tempData = this.letters;
         if( event.keyCode >= 48 && event.keyCode <= 90 && !(Event.KeyCode >= 58 && event.KeyCode <= 64)){
+                tempData.push(Event.Key);
+        } else {
 
         }
     }
@@ -46,7 +48,7 @@ class Command {
         this.spacing = 1;
     }
 
-    function changeFont(){
+    function shortcuts(){
     if (KeyboardEvent.ctrlKey){
       if(event.key = "b" || event.key = "B"){
           this.font = 2;
@@ -57,11 +59,6 @@ class Command {
       if(event.key = "j" || event.key = "J"){
           this.font = 4;
       }
-    }
-}
-
-function changeSpacing(){
-    if (keycommands.ctrlKey){
         if(event.key = "a" || event.key = "A"){
             this.spacing = 2;
         }
@@ -80,21 +77,4 @@ function changeSpacing(){
     }
 }
 }
-<<<<<<< HEAD
 
-document.addEventListener("keypress", inputKey);
-class Key {
-    constructor(){
-this.letters ="";
-    }
-    inputKey(){
-        let tempData = this.letters;
-        if( Event.keyCode >= 48 && Event.keyCode <= 90 && !(Event.KeyCode >= 58 && Event.KeyCode <= 64)){
-            tempData.push(Event.Key);
-        } else {
-
-        }
-    }
-}
-=======
->>>>>>> origin/master
