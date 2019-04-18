@@ -26,6 +26,8 @@ this.letters ="";
     }
     inputKey(){
         let tempData = this.letters;
-        if( Event.Key == )
+        if( Event.keyCode >= 48 && Event.keyCode <= 90 && !(Event.KeyCode >= 58 && Event.KeyCode <= 64)){
+
+        }
     }
 }
