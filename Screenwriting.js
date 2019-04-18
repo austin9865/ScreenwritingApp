@@ -19,9 +19,13 @@ class Text {
 
     }
 }
-
+document.addEventListener(Keypress, inputKey);
 class Key {
     constructor(){
-
+this.letters ="";
+    }
+    inputKey(){
+        let tempData = this.letters;
+        if( Event.Key == )
     }
 }
