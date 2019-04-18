@@ -12,18 +12,42 @@ class Document {
 
 class Text {
     constructor(){
-        this.font = 1;
-        this.spacing = 1;
         this.written = " ";
-        this.keycommands = new Key
+        this.keucommands = new Command
+        this.keyinput = new Key
 
     }
 
 document.addEventListener("keypress", changeFont);
  document.addEventListener("keypress",  changeSpacing);
 
-function changeFont(){
-    if (keycommands.ctrlKey){
+
+}
+
+document.addEventListener("keypress", inputKey);
+class Key {
+    constructor(){
+this.letters ="";
+    }
+    inputKey(){
+        let tempData = this.letters;
+        if( event.keyCode >= 48 && event.keyCode <= 90 && !(Event.KeyCode >= 58 && event.KeyCode <= 64)){
+
+        }
+    }
+}
+
+document.addEventListener("keypress", changeFont);
+document.addEventListener("keypress",  changeSpacing);
+
+class Command {
+    constructor(){
+        this.font = 1;
+        this.spacing = 1;
+    }
+
+    function changeFont(){
+    if (KeyboardEvent.ctrlKey){
       if(event.key = "b" || event.key = "B"){
           this.font = 2;
       }
@@ -56,6 +80,7 @@ function changeSpacing(){
     }
 }
 }
+<<<<<<< HEAD
 
 document.addEventListener("keypress", inputKey);
 class Key {
@@ -71,3 +96,5 @@ this.letters ="";
         }
     }
 }
+=======
+>>>>>>> origin/master
