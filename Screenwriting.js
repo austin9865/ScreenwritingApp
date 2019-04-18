@@ -23,7 +23,7 @@ document.addEventListener("keypress", changeFont);
  document.addEventListener("keypress",  changeSpacing);
 
 function changeFont(){
-    if (keycommands.ctrlKey){
+    if (KeyboardEvent.ctrlKey){
       if(event.key = "b" || event.key = "B"){
           this.font = 2;
       }
