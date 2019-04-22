@@ -1,3 +1,5 @@
+let doc = document.getElementById("document");
+
 class Screenplay {
     constructor(){
         this.document= new Document();
@@ -29,10 +31,12 @@ class Key {
     constructor(){
 this.letters ="";
     }
-    inputKey(){
-        let tempData = this.letters;
-        if( event.keyCode >= 48 && event.keyCode <= 90 && !(Event.KeyCode >= 58 && event.KeyCode <= 64)){
 
+    function inputKey(){
+        let tempData = this.letters;
+        if( event.keyCode >= 48 && event.keyCode <= 90 && !(event.KeyCode >= 58 && event.KeyCode <= 64)){
+            tempData = event.key
+            console.log(tempData)
         }
     }
 }
