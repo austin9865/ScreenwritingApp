@@ -31,15 +31,14 @@ class Key {
     constructor(){
     this.letters = "";
     }
-<<<<<<< HEAD
+
 document.addEventListener("keypress", inputKey);
-=======
+
     inputKey(){
         let tempData = this.letters;
         if( event.keyCode >= 48 && event.keyCode <= 90 && !(Event.KeyCode >= 58 && event.KeyCode <= 64)){
                 tempData.push(Event.Key);
         } else {
->>>>>>> Origin/master
 
     function inputKey(){
         this.letters += event.key;
@@ -58,14 +57,10 @@ class Command {
 
     function shortcuts(){
     if (KeyboardEvent.ctrlKey){
-<<<<<<< HEAD
-      if(Event.key = "b" || event.key = "B"){
-=======
       if(event.key = "q" || event,key = "Q"){
           this.font = 1;
       }
       if(event.key = "w" || event.key = "W"){
->>>>>>> Origin/master
           this.font = 2;
       }
       if(event.key = "e" || event.key = "E"){
