@@ -26,18 +26,16 @@ document.addEventListener("keypress", changeFont);
 
 }
 
-document.addEventListener("keypress", inputKey);
+
 class Key {
     constructor(){
-this.letters ="";
+    this.letters = "";
     }
+document.addEventListener("keypress", inputKey);
 
     function inputKey(){
-        let tempData = this.letters;
-        if( event.keyCode >= 48 && event.keyCode <= 90 && !(event.KeyCode >= 58 && event.KeyCode <= 64)){
-            tempData = event.key
-            console.log(tempData)
-        }
+        this.letters += event.key;
+        console.log(this.letters);
     }
 }
 
@@ -52,7 +50,7 @@ class Command {
 
     function changeFont(){
     if (KeyboardEvent.ctrlKey){
-      if(event.key = "b" || event.key = "B"){
+      if(Event.key = "b" || event.key = "B"){
           this.font = 2;
       }
       if(event.key = "i" || event.key = "I"){
