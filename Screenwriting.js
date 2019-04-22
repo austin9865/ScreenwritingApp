@@ -1,3 +1,5 @@
+let doc = document.getElementById("document");
+
 class Screenplay {
     constructor(){
         this.document= new Document();
@@ -24,18 +26,17 @@ document.addEventListener("keypress", changeFont);
 
 }
 
-document.addEventListener("keypress", inputKey);
+
 class Key {
     constructor(){
-this.letters ="";
+    this.letters = "";
     }
-    inputKey(){
-        let tempData = this.letters;
-        if( event.keyCode >= 48 && event.keyCode <= 90 && !(Event.KeyCode >= 58 && event.KeyCode <= 64)){
-                tempData.push(Event.Key);
-        } else {
 
-        }
+document.addEventListener("keypress", inputKey);
+
+    function inputKey(){
+        this.letters += event.key;
+        console.log(this.letters);
     }
 }
 
