@@ -34,12 +34,6 @@ class Key {
 
 document.addEventListener("keypress", inputKey);
 
-    inputKey(){
-        let tempData = this.letters;
-        if( event.keyCode >= 48 && event.keyCode <= 90 && !(Event.KeyCode >= 58 && event.KeyCode <= 64)){
-                tempData.push(Event.Key);
-        } else {
-
     function inputKey(){
         this.letters += event.key;
         console.log(this.letters);
