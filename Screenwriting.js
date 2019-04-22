@@ -80,7 +80,7 @@ class Command {
         if(event.key = "p" || event.key = "P"){
             this.spacing = 6;
         }
-    } else if(KeyBoardEvent.EnterKey){
+    } else if(Event.keyCode = 13){
 
     }
 }
