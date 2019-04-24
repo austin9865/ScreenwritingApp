@@ -36,14 +36,15 @@ class Line {
         if(event.keyCode == 8){
             let str = this.written;
             let strRmv = str.substring(0, str.length - 1);
-            console.log(strRmv);
             this.written = strRmv
             doc.textContent = this.written;
         }
     }
 
     inputKey(event){
-        this.written += event.key;
+        if(event.keyCode !== 13){
+           this.written += event.key;
+        }
         doc.textContent = this.written;
     }
 
