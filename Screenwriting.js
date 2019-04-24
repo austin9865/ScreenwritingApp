@@ -22,22 +22,29 @@ class Line {
         this.written = " ";
         //this.keyCommands = new Command;
         //this.keyInput = new Key;
-        window.addEventListener("keydown", (event) => {
+        window.addEventListener("keypress", (event) => {
             this.inputKey(event);
+        });
+        window.addEventListener("keydown", (event) => {
+            this.backspace(event);
         });
         this.doc = document.getElementById("document");
 
     }
 
+    backspace(event){
+        if(event.keyCode == 8){
+            let str = this.written;
+            let strRmv = str.substring(0, str.length - 1);
+            console.log(strRmv);
+            this.written = strRmv
+            doc.textContent = this.written;
+        }
+    }
+
     inputKey(event){
-        if(event.keyCode >= 48 || event.keyCode <= 90){
-            this.written += event.key;
-        }
-        let txtStr = this.written;
-        }
-        //let text = textString.split("");
-        //if (event.keyCode = )
-        doc.textContent = txtStr;
+        this.written += event.key;
+        doc.textContent = this.written;
     }
 
 
