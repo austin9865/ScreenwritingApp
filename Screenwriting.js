@@ -17,7 +17,7 @@ class Text {
         this.written = " ";
         //this.keyCommands = new Command;
         //this.keyInput = new Key;
-        window.addEventListener("keypress", (event) => {
+        window.addEventListener("keydown", (event) => {
             this.inputKey(event);
         });
         this.doc = document.getElementById("document");
@@ -25,8 +25,17 @@ class Text {
     }
 
     inputKey(event){
-        this.written += event.key;
-        doc.textContent = this.written;
+        if(event.keyCode >= 48 || event.keyCode <= 90){
+            this.written += event.key;
+        }
+        let txtStr = this.written;
+        if(event.keycode = 8){
+            for(var i = 0; i < 11; i++){
+                txtStr.charAt(txtStr.length - 1);
+        }
+        //let text = textString.split("");
+        //if (event.keyCode = )
+        doc.textContent = txtStr;
     }
 
 
