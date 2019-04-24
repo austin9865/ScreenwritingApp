@@ -29,9 +29,6 @@ class Text {
             this.written += event.key;
         }
         let txtStr = this.written;
-        if(event.keycode = 8){
-            for(var i = 0; i < 11; i++){
-                txtStr.charAt(txtStr.length - 1);
         }
         //let text = textString.split("");
         //if (event.keyCode = )
