@@ -15,13 +15,18 @@ class Document {
 class Text {
     constructor(){
         this.written = " ";
-<<<<<<< HEAD
-        this.keyCommands = new Command;
-        this.keyInput = new Key();
+        //this.keyCommands = new Command;
+        //this.keyInput = new Key;
+        window.addEventListener("keypress", (event) => {
+            this.inputKey(event);
+        });
+        this.doc = document.getElementById("document");
+
     }
-    fuction inputKey(){
-        this.letters += Event.key;
-        console.log(this.letters);
+
+    inputKey(event){
+        this.written += event.key;
+        doc.textContent = this.written;
     }
 
 document.addEventListener("keypress", inputKey())
@@ -72,27 +77,6 @@ class Command {
     } if()
 }
 }
- document.addEventListener("keypress", changeFont);
- document.addEventListener("keypress",  changeSpacing);
-=======
-        //this.keyCommands = new Command;
-        //this.keyInput = new Key;
-        window.addEventListener("keypress", (event) => {
-            this.inputKey(event);
-        });
-        this.doc = document.getElementById("document");
-
-    }
-
-    inputKey(event){
-        this.written += event.key;
-        doc.textContent = this.written;
-    }
-
-
-}
-
-
 //class Key {
 //    constructor(){
 //    this.letters = "";
@@ -155,4 +139,3 @@ class Command {
 
 
 let screenplay = new Screenplay();
->>>>>>> origin/master
