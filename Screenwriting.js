@@ -22,13 +22,14 @@ class Line {
         this.written = " ";
         //this.keyCommands = new Command;
         //this.keyInput = new Key;
+        this.doc = document.getElementById("document");
+
         window.addEventListener("keypress", (event) => {
             this.inputKey(event);
         });
         window.addEventListener("keydown", (event) => {
             this.backspace(event);
         });
-        this.doc = document.getElementById("document");
 
     }
 
