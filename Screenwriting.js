@@ -1,3 +1,5 @@
+
+
 class Screenplay {
 constructor() {
 this.document = new Document();
@@ -120,7 +122,6 @@ this.written = " ";
 }
 
 }
-
 
 // I think this should be all in the screenplay app class...
 // It is the screenplay app class that decides how to format based on whether we are creating a new scene, etc.
