@@ -61,31 +61,29 @@ class Command {
 
   shortcuts(KeyboardEvent){
       if (KeyboardEvent.shiftKey){
-      if(Event.key = "q" || Event,key = "Q"){
-          this.doc.style.fontSize = 1 + 1 + "px";
-          this.font = 1 + 1;
+      if(Event.key = "q"){
+          this.doc.style.fontSize = this.font + 1 + "px";
       }
-//      if(Event.key = "b" || Event.key = "B"){
-//         this.doc.style.fontWeight = "bold";
-//      }
-//      if(Event.key = "i" || Event.key = "I"){
-//          this.doc.style.fontStyle = "italic";
-//      }
-//      if(Event.key = "r" || Event.key = "R"){
-//          this.doc.style.fonstyle = "";
-//          this.doc.style.fontWeight = "";
-//      }
-//        if(Event.key = "t" || Event.key = "T"){
-//            this.spacing = 1 + 1;
-//        }
-//        if(Event.key = "a" || Event.key = "A"){
-//            this.doc.style.textTransform = "capitalize";
-//        }
+      if(Event.key = "b" ){
+         this.doc.style.fontWeight = "bold";
+      }
+      if(Event.key = "i"){
+          this.doc.style.fontStyle = "italic";
+      }
+      if(Event.key = "r"){
+          this.doc.style.fonstyle = "";
+          this.doc.style.fontWeight = "";
+      }
+        if(Event.key = "t"){
+            this.spacing = 1 + 1;
+        }
+        if(Event.key = "a"){
+            this.doc.style.textTransform = "capitalize";
+        }
           if(Event.keyCode = 13){
               this.lines = new Line();
           }
       if(this.font >= 5){
-      this.doc.style.fontSize = 1 + "px";
       this.font = 1;
 }
 }
