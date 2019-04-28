@@ -2,3 +2,8 @@ body {
     font-family: 'Cousine', sans-serif !important;
 }
 
+div {
+    margin-right: 400px;
+    margin-left: 400px;
+}
+
