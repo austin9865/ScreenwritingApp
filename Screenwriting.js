@@ -63,6 +63,7 @@ class Line {
 //    function shortcuts(){
 //    if (KeyboardEvent.ctrlKey){
 //      if(Event.key = "q" || Event,key = "Q"){
+//          this.doc.style.fontSize = 1 + 1 + "px";
 //          this.font = 1 + 1;
 //      }
 //      if(Event.key = "b" || Event.key = "B"){
@@ -96,7 +97,9 @@ class Line {
 //    } else if(Event.keyCode = 13){
 //        this.lines = new Line();
 //    }
-//      if(){}
+//      if(this.font >= 5){
+//      this.doc.style.fontSize = 1 + "px";
+//      this.font = 1;
 //}
 //}
 
