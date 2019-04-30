@@ -1,15 +1,12 @@
 class Screenplay {
-constructor() {
+constructor(){
 this.document = new Document();
 window.addEventListener("keydown", (event) => {
-this.processKeyDown(event);
-});
+this.processKeyDown(event);});
  window.addEventListener("keyup", (event) => {
-this.shortcuts(event);
-}
-
+this.shortcuts(event);}
+ }
 processKeyDown(event) {
-
 // You have to change this next line of code if you want to always be editing the last line of the last scene..etc.
 let currentLine = this.document.getCurrentAct().getCurrentScene().getCurrentLine();
 
@@ -18,36 +15,31 @@ let str = currentLine.written;
 let strRmv = str.substring(0, str.length - 1);
 currentLine.written = strRmv;
 } else if (event.keyCode == 13) {
-this.lines = new Line();
-// You need to figure out how to add a line break - like a new <p> element to the document.
-// That needs to be done in the Document - in renderDocument, not here.
 this.document.getCurrentAct().getCurrentScene().addLine();
 
 } else {
-currentLine.written += event.key;
-}
-// I would suggest doing something more like this:
 this.document.renderDocument(currentLine.written;);
 }
- shortcuts(KeyboardEvent) {
+}
+ shortCuts(KeyboardEvent) {
  if (KeyboardEvent.shiftKey) {
- if (Event.key = "q") {
+ if (event.key = "q") {
  this.doc.style.fontSize = this.font + 1 + "px";
  }
- if (Event.key = "b") {
+ if (event.key = "b") {
  this.doc.style.fontWeight = "bold";
  }
- if (Event.key = "i") {
+ if (event.key = "i") {
  this.doc.style.fontStyle = "italic";
  }
- if (Event.key = "r") {
+ if (event.key = "r") {
  this.doc.style.fonstyle = "";
  this.doc.style.fontWeight = "";
  }
- if (Event.key = "t") {
+ if (event.key = "t") {
  this.spacing = 1 + 1;
  }
- if (Event.key = "a") {
+ if (event.key = "a") {
  this.doc.style.textTransform = "capitalize";
  }
  if (this.font >= 5) {
@@ -56,7 +48,7 @@ this.document.renderDocument(currentLine.written;);
  }
  }
 }
-
+}
 class Document {
 constructor() {
 this.doc = document.getElementById("document");
@@ -87,7 +79,6 @@ console.log(this.acts[i].render());
 }
 }
 }
-
 class Act {
 constructor() {
 this.scenes = [new Scene()];
