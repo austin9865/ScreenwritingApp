@@ -1,9 +1,13 @@
+let doc = document.getElementById("document");
 class Screenplay {
     constructor() {
         this.document = new Document();
         window.addEventListener("keydown", (event) => {
             this.processKeyDown(event);
         });
+        //        window.addEventListener("keyup", (event) => {
+        //            this.shortCuts(event);
+        //        });
     }
 
     processKeyDown(event) {
@@ -23,15 +27,40 @@ class Screenplay {
         } else if (event.keyCode == 34) {
             this.document.getCurrentAct().addScene();
 
-        } else if (KeyboardEvent.shiftKey) {
-            currentLine.shortCuts(event);
+            //        } else if (event.keyCode == ){}
 
-        }else {
+        } else {
             currentLine.written += event.key;
         }
 
         this.document.renderDocument();
     }
+    //    shortCuts(KeyboardEvent) {
+    //        if (KeyboardEvent.shiftKey) {
+    //            if (event.key = "q") {
+    //                this.doc.style.fontSize = this.font + 1 + "px";
+    //            }
+    //            if (event.key = "b") {
+    //                this.doc.style.fontWeight = "bold";
+    //            }
+    //            if (event.key = "i") {
+    //                this.doc.style.fontStyle = "italic";
+    //            }
+    //            if (event.key = "r") {
+    //                this.doc.style.fonstyle = "";
+    //                this.doc.style.fontWeight = "";
+    //            }
+    //            if (event.key = "t") {
+    //                this.spacing = 1 + 1;
+    //            }
+    //            if (event.key = "a") {
+    //                this.doc.style.textTransform = "capitalize";
+    //            }
+    //            if (this.font >= 5) {
+    //                this.font = 1 + "px"
+    //            }
+    //        }
+    //    }
 
 }
 class Document {
@@ -118,31 +147,7 @@ class Line {
         console.log("new Line created");
         this.written = " ";
     }
-  shortCuts(KeyboardEvent) {
-        if (KeyboardEvent.shiftKey) {
-            if (event.key = "q") {
-                this.doc.style.fontSize = this.font + 1 + "px";
-            }
-            if (event.key = "b") {
-                this.doc.style.fontWeight = "bold";
-            }
-            if (event.key = "i") {
-                this.doc.style.fontStyle = "italic";
-            }
-            if (event.key = "r") {
-                this.doc.style.fonstyle = "";
-                this.doc.style.fontWeight = "";
-            }
-            if (event.key = "t") {
-                this.spacing = 1 + 1;
-            }
-            if (event.key = "a") {
-                this.doc.style.textTransform = "capitalize";
-            }
-            if (this.font >= 5) {
-                this.font = 1 + "px"
-            }
-        }
+
 }
 
 let screenplay = new Screenplay();
