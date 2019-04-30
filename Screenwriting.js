@@ -6,6 +6,8 @@ this.processKeyDown(event);});
  window.addEventListener("keyup", (event) => {
 this.shortcuts(event);}
  }
+}
+
 processKeyDown(event) {
 // You have to change this next line of code if you want to always be editing the last line of the last scene..etc.
 let currentLine = this.document.getCurrentAct().getCurrentScene().getCurrentLine();
@@ -47,7 +49,6 @@ this.document.renderDocument(currentLine.written;);
  }
  }
  }
-}
 }
 class Document {
 constructor() {
