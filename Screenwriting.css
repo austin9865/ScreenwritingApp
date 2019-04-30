@@ -1,8 +1,14 @@
 body {
-    font-family: 'Cousine', sans-serif !important;
+
 }
 
 div {
     margin-right: 600px;
     margin-left: 600px;
+    font-family: 'Cousine', sans-serif !important;
+}
+
+h1{
+   background: #CE93D8;
+   text-align: center;
 }
