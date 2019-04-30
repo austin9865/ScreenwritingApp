@@ -89,6 +89,8 @@ class Document {
         for (let i = 0; i < this.acts.length; i++) {
             // This is where you need to decide how to put it all together on the page...
             console.log(this.acts[i].render());
+            doc.appendChild(this.acts[i].render());
+
 
         }
     }
@@ -112,6 +114,7 @@ class Act {
         let act = document.createElement("div");
         for (let i = 0; i < this.scenes.length; i++) {
             // Go through all the scenes and package them up as DOM elements...
+            act.textContent = "ACT:"
             act.appendChild(this.scenes[i].render());
         }
         return act;
@@ -134,6 +137,7 @@ class Scene {
     render() {
         let scene = document.createElement("div");
         for (let i = 0; i < this.lines.length; i++) {
+            scene.textContent = "Scene:";
             let line = document.createElement("p");
             line.textContent = this.lines[i].written;
             scene.appendChild(line);
