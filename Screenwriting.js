@@ -33,8 +33,8 @@ this.document.renderDocument(currentLine.written;);
  this.doc.style.fontStyle = "italic";
  }
  if (event.key = "r") {
- this.doc.style.fonstyle = "";
- this.doc.style.fontWeight = "";
+ this.doc.style.fonstyle = "normal";
+ this.doc.style.fontWeight = "normal";
  }
  if (event.key = "t") {
  this.spacing = 1 + 1;
@@ -42,8 +42,9 @@ this.document.renderDocument(currentLine.written;);
  if (event.key = "a") {
  this.doc.style.textTransform = "capitalize";
  }
- if (this.font >= 5) {
+ if (this.font >= 25 {
  this.font = 1 + "px"
+ this.doc.style.fontSize = "normal";
  }
  }
  }
