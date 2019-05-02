@@ -18,12 +18,15 @@ class Screenplay {
             currentLine.written = strRmv;
         } else if (event.keyCode == 13) {
             this.document.getCurrentAct().getCurrentScene().addLine();
+            //this.document.getCurrentAct().getCurrentScene().getCurrentLine();
 
         } else if (event.keyCode == 33) {
             this.document.addAct();
+            this.document.getCurrentAct.render();
 
         } else if (event.keyCode == 34) {
             this.document.getCurrentAct().addScene();
+            this.document.getCurrentAct().getCurrentScene().render();
         } else {
             currentLine.written += event.key;
             this.document.getCurrentAct().getCurrentScene().render();
@@ -151,6 +154,9 @@ class Line {
     constructor() {
         console.log("new Line created");
         this.written = " ";
+    }
+    render() {
+
     }
 
 }
