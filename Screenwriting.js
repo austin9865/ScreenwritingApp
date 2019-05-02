@@ -5,9 +5,9 @@ class Screenplay {
         window.addEventListener("keydown", (event) => {
             this.processKeyDown(event);
         });
-                window.addEventListener("keyup", (event) => {
-                    this.shortCuts(event);
-                });
+//                window.addEventListener("keyup", (event) => {
+//                    this.shortCuts(event);
+//                });
     }
 
     processKeyDown(event) {
@@ -81,6 +81,9 @@ class Document {
         // And then updates the DOM - this is where you could put in your "line" breaks.
         // You could also allow each parent to render its children...like this:
         for (let i = 0; i < this.acts.length; i++) {
+             while(this.acts[i].lastElementChild()){
+                this.acts[i].removeChild(this.acts[i].lastElementChildChild());
+            }
             console.log(this.acts[i].render());
             doc.appendChild(this.acts[i].render());
         }
@@ -104,6 +107,9 @@ class Act {
     render() {
         let act = document.createElement("div");
         for (let i = 0; i < this.scenes.length; i++) {
+            if(this.scenes[i].lastChild()){
+                this.scenes[i].removeChild();
+            }
             act.textContent = "ACT:"
             act.appendChild(this.scenes[i].render());
         }
@@ -127,6 +133,9 @@ class Scene {
     render() {
         let scene = document.createElement("div");
         for (let i = 0; i < this.lines.length; i++) {
+             if(this.lines[i].lastChild()){
+                this.lines[i].removeChild();
+            }
             scene.textContent = "Scene:";
             let line = document.createElement("p");
             line.textContent = this.lines[i].written;
