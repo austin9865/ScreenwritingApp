@@ -31,28 +31,31 @@ class Screenplay {
     }
         shortCuts(KeyboardEvent) {
             if (KeyboardEvent.shiftKey) {
-                if (event.key = "q") {
+                if (event.keyCode = 81) {
                     this.font = this.font + 1;
                     this.doc.style.fontSize = this.font;
                 }
-                if (event.key = "b") {
+                if (event.keyCode = 86) {
                     this.doc.style.fontWeight = "bold";
                 }
-                if (event.key = "i") {
+                if (event.keyCode = 73) {
                     this.doc.style.fontStyle = "italic";
                 }
-                if (event.key = "r") {
+                if (event.keyCode = 82) {
                     this.doc.style.fonstyle = "normal";
                     this.doc.style.fontWeight = "normal";
                 }
-                if (event.key = "t") {
-                    this.spacing = 1 + 1;
+                if (event.keyCode = 84) {
+                    this.spacing = this.spacing + 1;
                 }
-                if (event.key = "a") {
+                if (event.keyCode = 65) {
                     this.doc.style.textTransform = "capitalize";
                 }
                 if (this.font >= 45) {
                     this.font = 16 + "px"
+                }
+                if (this.spacing >= 25) {
+                    this.spacing = 1;
                 }
             }
         }
