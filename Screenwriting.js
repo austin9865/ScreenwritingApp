@@ -38,7 +38,7 @@ class Screenplay {
                 if (event.keyCode = 86) {
                     this.doc.style.fontWeight = "bold";
                 }
-                if (event.keyCode =73) {
+                if (event.keyCode = 73) {
                     this.doc.style.fontStyle = "italic";
                 }
                 if (event.keyCode = 82) {
@@ -46,13 +46,16 @@ class Screenplay {
                     this.doc.style.fontWeight = "normal";
                 }
                 if (event.keyCode = 84) {
-                    this.spacing = 1 + 1;
+                    this.spacing = this.spacing + 1;
                 }
                 if (event.keyCode = 65) {
                     this.doc.style.textTransform = "capitalize";
                 }
                 if (this.font >= 45) {
                     this.font = 16 + "px"
+                }
+                if (this.spacing >= 25) {
+                    this.spacing = 1;
                 }
             }
         }
