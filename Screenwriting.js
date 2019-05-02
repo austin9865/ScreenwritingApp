@@ -5,9 +5,9 @@ class Screenplay {
         window.addEventListener("keydown", (event) => {
             this.processKeyDown(event);
         });
-//                window.addEventListener("keyup", (event) => {
-//                    this.shortCuts(event);
-//                });
+        //                window.addEventListener("keyup", (event) => {
+        //                    this.shortCuts(event);
+        //                });
     }
 
     processKeyDown(event) {
@@ -18,47 +18,50 @@ class Screenplay {
             currentLine.written = strRmv;
         } else if (event.keyCode == 13) {
             this.document.getCurrentAct().getCurrentScene().addLine();
+            //this.document.getCurrentAct().getCurrentScene().getCurrentLine();
 
         } else if (event.keyCode == 33) {
             this.document.addAct();
+            this.document.getCurrentAct.render();
 
         } else if (event.keyCode == 34) {
             this.document.getCurrentAct().addScene();
+            this.document.getCurrentAct().getCurrentScene().render();
         } else {
             currentLine.written += event.key;
         }
-            this.document.renderDocument();
+        // this.document.renderDocument();
     }
-        shortCuts(KeyboardEvent) {
-            if (KeyboardEvent.shiftKey) {
-                if (event.keyCode = 81) {
-                    this.font = this.font + 1;
-                    this.doc.style.fontSize = this.font;
-                }
-                if (event.keyCode = 86) {
-                    this.doc.style.fontWeight = "bold";
-                }
-                if (event.keyCode = 73) {
-                    this.doc.style.fontStyle = "italic";
-                }
-                if (event.keyCode = 82) {
-                    this.doc.style.fonstyle = "normal";
-                    this.doc.style.fontWeight = "normal";
-                }
-                if (event.keyCode = 84) {
-                    this.spacing = this.spacing + 1;
-                }
-                if (event.keyCode = 65) {
-                    this.doc.style.textTransform = "capitalize";
-                }
-                if (this.font >= 45) {
-                    this.font = 16 + "px"
-                }
-                if (this.spacing >= 25) {
-                    this.spacing = 1;
-                }
+    shortCuts(KeyboardEvent) {
+        if (KeyboardEvent.shiftKey) {
+            if (event.keyCode = 81) {
+                this.font = this.font + 1;
+                this.doc.style.fontSize = this.font;
+            }
+            if (event.keyCode = 86) {
+                this.doc.style.fontWeight = "bold";
+            }
+            if (event.keyCode = 73) {
+                this.doc.style.fontStyle = "italic";
+            }
+            if (event.keyCode = 82) {
+                this.doc.style.fonstyle = "normal";
+                this.doc.style.fontWeight = "normal";
+            }
+            if (event.keyCode = 84) {
+                this.spacing = this.spacing + 1;
+            }
+            if (event.keyCode = 65) {
+                this.doc.style.textTransform = "capitalize";
+            }
+            if (this.font >= 45) {
+                this.font = 16 + "px"
+            }
+            if (this.spacing >= 25) {
+                this.spacing = 1;
             }
         }
+    }
 }
 class Document {
     constructor() {
@@ -84,11 +87,7 @@ class Document {
         // And then updates the DOM - this is where you could put in your "line" breaks.
         // You could also allow each parent to render its children...like this:
         for (let i = 0; i < this.acts.length; i++) {
-             if(this.acts[i].lastElementChild()){
-                this.acts[i].removeChild(this.acts[i].lastElementChild());
-            }
-            console.log(this.acts[i].render());
-            doc.appendChild(this.acts[i].render());
+            doc.appendChild(this.acts[i].render())
         }
     }
 }
@@ -110,9 +109,6 @@ class Act {
     render() {
         let act = document.createElement("div");
         for (let i = 0; i < this.scenes.length; i++) {
-            if(this.scenes[i].lastChild()){
-                this.scenes[i].removeChild();
-            }
             act.textContent = "ACT:"
             act.appendChild(this.scenes[i].render());
         }
@@ -136,22 +132,23 @@ class Scene {
     render() {
         let scene = document.createElement("div");
         for (let i = 0; i < this.lines.length; i++) {
-             if(this.lines[i].lastChild()){
-                this.lines[i].removeChild();
-            }
             scene.textContent = "Scene:";
             let line = document.createElement("p");
-            line.textContent = this.lines[i].written;
             scene.appendChild(line);
         }
         return scene;
     }
+
 }
+
 
 class Line {
     constructor() {
         console.log("new Line created");
         this.written = " ";
+    }
+    render() {
+
     }
 
 }
