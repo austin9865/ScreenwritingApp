@@ -84,8 +84,8 @@ class Document {
         // And then updates the DOM - this is where you could put in your "line" breaks.
         // You could also allow each parent to render its children...like this:
         for (let i = 0; i < this.acts.length; i++) {
-             while(this.acts[i].lastElementChild()){
-                this.acts[i].removeChild(this.acts[i].lastElementChildChild());
+             if(this.acts[i].lastElementChild()){
+                this.acts[i].removeChild(this.acts[i].lastElementChild());
             }
             console.log(this.acts[i].render());
             doc.appendChild(this.acts[i].render());
