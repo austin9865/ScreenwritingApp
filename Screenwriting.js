@@ -79,14 +79,6 @@ class Document {
     }
 
     renderDocument() {
-        // This code is will need to be modified because its really here that you "build" the DOM for the display.
-        // You could have each class responsible for its own rendering though...have each line render itself.
-        // Not sure, this is going to take some thinking.
-        // This line only deals with a single line document.
-        // this.document.doc.textContent = currentLine.written;
-        // I think what makes the most sense here is to have a for loop that goes through all the document's current lines
-        // And then updates the DOM - this is where you could put in your "line" breaks.
-        // You could also allow each parent to render its children...like this:
         for (let i = 0; i < this.acts.length; i++) {
             console.log(this.acts[i].render())
             var thisAct = this.acts[i].render();
