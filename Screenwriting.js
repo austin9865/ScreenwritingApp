@@ -1,71 +1,17 @@
 let doc = document.getElementById("document");
 class Screenplay {
-<<<<<<< HEAD
-constructor(){
-this.document = new Document();
-window.addEventListener("keydown", (event) => {
-this.processKeyDown(event);});
- window.addEventListener("keyup", (event) => {
-this.shortcuts(event);}
- }
-processKeyDown(event) {
-// You have to change this next line of code if you want to always be editing the last line of the last scene..etc.
-let currentLine = this.document.getCurrentAct().getCurrentScene().getCurrentLine();
-
-if (event.keyCode == 8) {
-let str = currentLine.written;
-let strRmv = str.substring(0, str.length - 1);
-currentLine.written = strRmv;
-} else if (event.keyCode == 13) {
-this.document.getCurrentAct().getCurrentScene().addLine();
-
-} else {
-this.document.renderDocument(currentLine.written;);
-}
-}
- shortCuts(KeyboardEvent) {
- if (KeyboardEvent.shiftKey) {
- if (event.key = "q") {
- this.doc.style.fontSize = this.font + 1 + "px";
- }
- if (event.key = "b") {
- this.doc.style.fontWeight = "bold";
- }
- if (event.key = "i") {
- this.doc.style.fontStyle = "italic";
- }
- if (event.key = "r") {
- this.doc.style.fonstyle = "normal";
- this.doc.style.fontWeight = "normal";
- }
- if (event.key = "t") {
- this.spacing = 1 + 1;
- }
- if (event.key = "a") {
- this.doc.style.textTransform = "capitalize";
- }
- if (this.font >= 25 {
- this.font = 1 + "px"
- this.doc.style.fontSize = "normal";
- }
- }
- }
-}
-=======
     constructor() {
         this.document = new Document();
         window.addEventListener("keydown", (event) => {
             this.processKeyDown(event);
         });
-        //        window.addEventListener("keyup", (event) => {
-        //            this.shortCuts(event);
-        //        });
+                window.addEventListener("keyup", (event) => {
+                    this.shortCuts(event);
+                });
     }
 
     processKeyDown(event) {
-        // You have to change this next line of code if you want to always be editing the last line of the last scene..etc.
         let currentLine = this.document.getCurrentAct().getCurrentScene().getCurrentLine();
-
         if (event.keyCode == 8) {
             let str = currentLine.written;
             let strRmv = str.substring(0, str.length - 1);
@@ -78,43 +24,38 @@ this.document.renderDocument(currentLine.written;);
 
         } else if (event.keyCode == 34) {
             this.document.getCurrentAct().addScene();
-
-            //        } else if (event.keyCode == ){}
-
         } else {
             currentLine.written += event.key;
         }
-
-        this.document.renderDocument();
+            this.document.renderDocument();
     }
-    //    shortCuts(KeyboardEvent) {
-    //        if (KeyboardEvent.shiftKey) {
-    //            if (event.key = "q") {
-    //                this.doc.style.fontSize = this.font + 1 + "px";
-    //            }
-    //            if (event.key = "b") {
-    //                this.doc.style.fontWeight = "bold";
-    //            }
-    //            if (event.key = "i") {
-    //                this.doc.style.fontStyle = "italic";
-    //            }
-    //            if (event.key = "r") {
-    //                this.doc.style.fonstyle = "";
-    //                this.doc.style.fontWeight = "";
-    //            }
-    //            if (event.key = "t") {
-    //                this.spacing = 1 + 1;
-    //            }
-    //            if (event.key = "a") {
-    //                this.doc.style.textTransform = "capitalize";
-    //            }
-    //            if (this.font >= 5) {
-    //                this.font = 1 + "px"
-    //            }
-    //        }
-    //    }
-
->>>>>>> origin/master
+        shortCuts(KeyboardEvent) {
+            if (KeyboardEvent.shiftKey) {
+                if (event.key = "q") {
+                    this.font = this.font + 1;
+                    this.doc.style.fontSize = this.font;
+                }
+                if (event.key = "b") {
+                    this.doc.style.fontWeight = "bold";
+                }
+                if (event.key = "i") {
+                    this.doc.style.fontStyle = "italic";
+                }
+                if (event.key = "r") {
+                    this.doc.style.fonstyle = "normal";
+                    this.doc.style.fontWeight = "normal";
+                }
+                if (event.key = "t") {
+                    this.spacing = 1 + 1;
+                }
+                if (event.key = "a") {
+                    this.doc.style.textTransform = "capitalize";
+                }
+                if (this.font >= 45) {
+                    this.font = 16 + "px"
+                }
+            }
+        }
 }
 class Document {
     constructor() {
@@ -140,11 +81,8 @@ class Document {
         // And then updates the DOM - this is where you could put in your "line" breaks.
         // You could also allow each parent to render its children...like this:
         for (let i = 0; i < this.acts.length; i++) {
-            // This is where you need to decide how to put it all together on the page...
             console.log(this.acts[i].render());
             doc.appendChild(this.acts[i].render());
-
-
         }
     }
 }
@@ -166,7 +104,6 @@ class Act {
     render() {
         let act = document.createElement("div");
         for (let i = 0; i < this.scenes.length; i++) {
-            // Go through all the scenes and package them up as DOM elements...
             act.textContent = "ACT:"
             act.appendChild(this.scenes[i].render());
         }
